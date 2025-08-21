@@ -25,7 +25,7 @@ This is a REST API for an online course-selling platform developed using Java an
 
 - **Reliability**
   - Custom exception handling
-  - Comprehensive unit testing with JUnit
+  - Comprehensive unit testing
 
 
 ## API Endpoints
