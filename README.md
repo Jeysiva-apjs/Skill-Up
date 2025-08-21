@@ -2,7 +2,6 @@
 
 This is a **REST API** for an online course-selling platform developed using **Java** and **Spring Boot**. It allows users to browse, purchase, and manage courses, while providing admins and instructors with tools to manage users and course content efficiently.
 
----
 
 ## Features
 
@@ -28,7 +27,6 @@ This is a **REST API** for an online course-selling platform developed using **J
   - Custom exception handling
   - Comprehensive unit testing with JUnit
 
----
 
 ## API Endpoints
 
@@ -40,19 +38,19 @@ This is a **REST API** for an online course-selling platform developed using **J
 | GET    | `/instructor/courses/all` | Get All Courses |
 | DELETE | `/instructor/courses/delete/{courseId}` | Delete Existing Course |
 
-### Admin API
-| Method | Endpoint | Description |
-|--------|---------|-------------|
-| PUT    | `/admin/{userId}` | Convert Student to Instructor |
-| DELETE | `/admin/{userId}` | Delete Student/Instructor |
-| GET    | `/admin/users` | Get All Users |
-
 ### Student API
 | Method | Endpoint | Description |
 |--------|---------|-------------|
 | POST   | `/student/purchaseCourses/{courseId}` | Purchase a Course |
 | GET    | `/student/purchasedCourses` | Get All Purchased Courses |
 | GET    | `/student/courses/all` | View All Available Courses |
+
+### Admin API
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| PUT    | `/admin/{userId}` | Convert Student to Instructor |
+| DELETE | `/admin/{userId}` | Delete Student/Instructor |
+| GET    | `/admin/users` | Get All Users |
 
 ### Authentication API
 | Method | Endpoint | Description |
@@ -64,21 +62,14 @@ This is a **REST API** for an online course-selling platform developed using **J
 | POST   | `/auth/logout` | Logout Current Logged-in User |
 | GET    | `/auth/session-user` | Get Current Logged-in User |
 
----
 
 ## Technology Stack
 
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Security
 - JPA/Hibernate
 - MySQL
-- JUnit for unit testing
 
----
 
-## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/online-course-platform.git
