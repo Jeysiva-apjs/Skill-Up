@@ -1,4 +1,4 @@
-# Online Course Selling Platform API
+# SkillUp - Online Course Selling Platform API
 
 This is a REST API for an online course-selling platform developed using Java and Spring Boot. It allows users to browse, purchase, and manage courses, while providing admins and instructors with tools to manage users and course content efficiently. Role-based authentication and authorization have been implemented using Spring Security to ensure that only authorized users can access specific endpoints, with separate permissions for admins, instructors, and students.
 
