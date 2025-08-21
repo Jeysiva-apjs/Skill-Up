@@ -22,6 +22,7 @@ This is a REST API for an online course-selling platform developed using Java an
   - Register as a Student, Instructor, or Admin
   - Login and Logout
   - Fetch current logged-in user details
+  - Role-based access control enforced by Spring Security
 
 - **Reliability**
   - Custom exception handling
