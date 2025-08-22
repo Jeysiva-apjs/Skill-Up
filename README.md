@@ -4,8 +4,9 @@ This is a REST API for an online course-selling platform developed using Java an
 
 ## Technology Stack
 
-- **Backend:** Java 21, Spring Boot  
-- **Security:** Spring Security, JWT Authentication  
+- **Backend:** Java, Spring Boot, Spring Security.
+- **Testing:** Junit5 and Mockito
+- **Documentation:** Well documeted with Swagger (refer the pictures below) 
 - **Persistence:** JPA / Hibernate, MySQL  
 - **Validation:** Bean Validation (Jakarta Validation API) 
 
