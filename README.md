@@ -2,6 +2,12 @@
 
 This is a REST API for an online course-selling platform developed using Java and Spring Boot. It allows users to browse, purchase, and manage courses, while providing admins and instructors with tools to manage users and course content efficiently. Role-based authentication and authorization have been implemented using Spring Security to ensure that only authorized users can access specific endpoints, with separate permissions for admins, instructors, and students.
 
+## Technology Stack
+
+- **Backend:** Java 21, Spring Boot  
+- **Security:** Spring Security, JWT Authentication  
+- **Persistence:** JPA / Hibernate, MySQL  
+- **Validation:** Bean Validation (Jakarta Validation API) 
 
 ## Features
 
@@ -27,6 +33,12 @@ This is a REST API for an online course-selling platform developed using Java an
 - **Reliability**
   - Custom exception handling
   - Comprehensive unit testing
+
+## Swagger Documentation 
+
+<img width="1324" height="663" alt="image" src="https://github.com/user-attachments/assets/fa05ed56-96bb-41f5-8fcc-2ac70d44dc20" />
+<img width="1325" height="358" alt="image" src="https://github.com/user-attachments/assets/13775a05-180e-4caa-b045-d018f547398a" />
+
 
 
 ## API Endpoints
@@ -63,13 +75,6 @@ This is a REST API for an online course-selling platform developed using Java an
 | POST   | `/auth/logout` | Logout Current Logged-in User |
 | GET    | `/auth/session-user` | Get Current Logged-in User |
 
-
-## Technology Stack
-
-- **Backend:** Java 21, Spring Boot  
-- **Security:** Spring Security, JWT Authentication  
-- **Persistence:** JPA / Hibernate, MySQL  
-- **Validation:** Bean Validation (Jakarta Validation API) 
 
 
 
