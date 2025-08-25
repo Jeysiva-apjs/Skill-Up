@@ -3,7 +3,7 @@ package com.jey.skillup;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jey.skillup.controller.InstructorController;
 import com.jey.skillup.entity.Course;
-import com.jey.skillup.exception.ApplicationExceptionHandler;
+import com.jey.skillup.exception.GlobalExceptionHandler;
 import com.jey.skillup.exception.CourseNotFoundException;
 import com.jey.skillup.request.CourseRequest;
 import com.jey.skillup.service.CourseService;

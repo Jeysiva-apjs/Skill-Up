@@ -7,6 +7,7 @@ import com.jey.skillup.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,14 +24,14 @@ public class AuthController {
 
     @Operation(summary = "Register As New Student")
     @PostMapping("/register/student")
-    public ResponseEntity<String> registerStudent(@RequestBody RegisterRequest request) throws Exception {
+    public ResponseEntity<String> registerStudent(@Valid @RequestBody RegisterRequest request) throws Exception {
         authenticationService.register(request, "ROLE_STUDENT");
         return new ResponseEntity<>("Student registered successfully!", HttpStatus.CREATED);
     }
 
     @Operation(summary = "Register As New Instructor")
     @PostMapping("/register/instructor")
-    public ResponseEntity<String> registerInstructor(@RequestBody RegisterRequest request) throws Exception {
+    public ResponseEntity<String> registerInstructor(@Valid @RequestBody RegisterRequest request) throws Exception {
         authenticationService.register(request, "ROLE_INSTRUCTOR");
         return new ResponseEntity<>("Instructor registered successfully!", HttpStatus.CREATED);
 
@@ -38,14 +39,14 @@ public class AuthController {
 
     @Operation(summary = "Register As New Admin")
     @PostMapping("/register/admin")
-    public ResponseEntity<String> registerAdmin(@RequestBody RegisterRequest request) throws Exception {
+    public ResponseEntity<String> registerAdmin(@Valid @RequestBody RegisterRequest request) throws Exception {
         authenticationService.register(request, "ROLE_ADMIN");
         return new ResponseEntity<>("Admin registered successfully!", HttpStatus.CREATED);
     }
 
     @Operation(summary = "Login With Email and Password")
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody AuthenticationRequest request, HttpServletRequest httpRequest) {
+    public ResponseEntity<String> login(@Valid @RequestBody AuthenticationRequest request, HttpServletRequest httpRequest) {
         authenticationService.login(request, httpRequest);
         return new ResponseEntity<>("Login successful", HttpStatus.OK);
     }

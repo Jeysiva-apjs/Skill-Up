@@ -2,6 +2,7 @@ package com.jey.skillup.service;
 
 import com.jey.skillup.entity.Authority;
 import com.jey.skillup.entity.User;
+import com.jey.skillup.exception.UserNotFoundException;
 import com.jey.skillup.repository.UserRepository;
 import com.jey.skillup.response.UserResponse;
 import org.springframework.http.HttpStatus;
@@ -38,8 +39,7 @@ public class AdminServiceImpl implements AdminService {
 
         if (user.isEmpty() || user.get().getAuthorities().stream().anyMatch(authority -> "ROLE_ADMIN"
                 .equals(authority.getAuthority()))) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-                    "User does not exist or already an admin");
+            throw new UserNotFoundException("User does not exist or already an admin");
         }
 
         List<Authority> authorities = new ArrayList<>();
@@ -58,8 +58,7 @@ public class AdminServiceImpl implements AdminService {
 
         if (user.isEmpty() || user.get().getAuthorities().stream().anyMatch(authority -> "ROLE_ADMIN"
                 .equals(authority.getAuthority()))) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-                    "User does not exist or already an admin");
+            throw new UserNotFoundException("User does not exist or already an admin");
         }
 
         userRepository.delete(user.get());
