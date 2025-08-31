@@ -1,6 +1,5 @@
-package com.jey.skillup;
+package com.jey.skillup.controller;
 
-import com.jey.skillup.controller.InstructorController;
 import com.jey.skillup.entity.Course;
 import com.jey.skillup.request.CourseRequest;
 import com.jey.skillup.service.CourseService;
@@ -58,7 +57,7 @@ class InstructorControllerTest {
 
     @Test
     void testDeleteCourse() {
-        long courseId = 2L;
+        long courseId = 1L;
         String expectedMessage = "Course deleted successfully";
 
         Mockito.when(courseService.deleteCourse(courseId)).thenReturn(expectedMessage);
@@ -68,6 +67,7 @@ class InstructorControllerTest {
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
         Assertions.assertEquals(expectedMessage, response.getBody());
     }
+
 
     @Test
     void testGetAllCourses() {

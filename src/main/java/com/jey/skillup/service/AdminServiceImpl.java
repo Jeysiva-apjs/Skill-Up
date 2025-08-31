@@ -5,10 +5,8 @@ import com.jey.skillup.entity.User;
 import com.jey.skillup.exception.UserNotFoundException;
 import com.jey.skillup.repository.UserRepository;
 import com.jey.skillup.response.UserResponse;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;

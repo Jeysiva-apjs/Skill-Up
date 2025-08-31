@@ -1,6 +1,5 @@
-package com.jey.skillup;
+package com.jey.skillup.controller;
 
-import com.jey.skillup.controller.StudentController;
 import com.jey.skillup.entity.Course;
 import com.jey.skillup.service.CourseService;
 import org.junit.jupiter.api.Assertions;
