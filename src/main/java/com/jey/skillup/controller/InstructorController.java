@@ -26,8 +26,7 @@ public class InstructorController {
     @Operation(summary = "Create A New Course")
     @PostMapping("/create")
     public ResponseEntity<String> createCourse(@Valid @RequestBody CourseRequest courseRequest) {
-        courseService.createCourse(courseRequest);
-        return new ResponseEntity<>("Course created successfully", HttpStatus.CREATED);
+        return new ResponseEntity<>(courseService.createCourse(courseRequest), HttpStatus.CREATED);
     }
 
     @Operation(summary = "Update Existing Course")

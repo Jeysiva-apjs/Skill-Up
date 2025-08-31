@@ -38,7 +38,7 @@ class StudentControllerTest {
 
     @Test
     void testPurchaseCourse() {
-        Long courseId = 1L;
+        long courseId = 1L;
         String successMessage = "Course purchased successfully";
         Mockito.when(courseService.purchaseCourse(courseId)).thenReturn(successMessage);
 
