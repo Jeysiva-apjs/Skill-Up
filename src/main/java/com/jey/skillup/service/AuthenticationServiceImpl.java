@@ -37,7 +37,6 @@ public class AuthenticationServiceImpl implements AuthenticationService{
         SecurityContextHolder.getContext().setAuthentication(authentication);
         HttpSession session = httpRequest.getSession(true);
         session.setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext());
-
     }
 
     @Override
@@ -68,7 +67,7 @@ public class AuthenticationServiceImpl implements AuthenticationService{
 
     private User convertToUser(RegisterRequest input, String role) {
         User user = new User();
-        user.setId(0);
+        user.setId(0L);
         user.setEmail(input.getEmail());
         user.setFirstName(input.getFirstName());
         user.setLastName(input.getLastName());

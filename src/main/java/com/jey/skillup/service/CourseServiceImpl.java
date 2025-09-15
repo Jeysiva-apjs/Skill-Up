@@ -76,7 +76,7 @@ public class CourseServiceImpl implements CourseService{
         String email = userService.getCurrentUsername();
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        user.getCourses().size(); // To force initialization
+//        user.getCourses().size();
         return user.getCourses();
     }
 
