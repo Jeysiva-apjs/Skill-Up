@@ -7,6 +7,7 @@ import com.jey.skillup.repository.CourseRepository;
 import com.jey.skillup.repository.UserRepository;
 import com.jey.skillup.request.CourseRequest;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,11 +17,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService{
-    private CourseRepository courseRepository;
-    private UserRepository userRepository;
-    private UserService userService;
+    private final CourseRepository courseRepository;
+    private final UserRepository userRepository;
+    private final UserService userService;
 
     @Override
     @Transactional

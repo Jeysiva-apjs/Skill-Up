@@ -8,19 +8,19 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Authentication API Endpoints")
-@RestController
 @RequestMapping("/auth")
-@AllArgsConstructor
+@RequiredArgsConstructor
+@RestController
 public class AuthController {
 
-    private AuthenticationService authenticationService;
-    private UserService userService;
+    private final AuthenticationService authenticationService;
+    private final UserService userService;
 
     @Operation(summary = "Register As New Student")
     @PostMapping("/register/student")

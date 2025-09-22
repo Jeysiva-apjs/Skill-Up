@@ -5,6 +5,7 @@ import com.jey.skillup.entity.User;
 import com.jey.skillup.exception.UserNotFoundException;
 import com.jey.skillup.repository.UserRepository;
 import com.jey.skillup.response.UserResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,13 +15,10 @@ import java.util.Optional;
 import java.util.stream.StreamSupport;
 
 @Service
+@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
     private final UserRepository userRepository;
-
-    public AdminServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     @Transactional(readOnly = true)

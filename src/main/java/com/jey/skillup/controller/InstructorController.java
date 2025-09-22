@@ -7,8 +7,11 @@ import com.jey.skillup.request.CourseRequest;
 import com.jey.skillup.service.CourseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.Min;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -16,12 +19,13 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @Tag(name = "Instructor API Endpoints")
-@RestController
+@Validated
 @RequestMapping("/instructor/courses")
-@AllArgsConstructor
+@RequiredArgsConstructor
+@RestController
 public class InstructorController {
 
-    private CourseService courseService;
+    private final CourseService courseService;
 
     @Operation(summary = "Create A New Course")
     @PostMapping("/create")
@@ -31,13 +35,13 @@ public class InstructorController {
 
     @Operation(summary = "Update Existing Course")
     @PutMapping("/update/{courseId}")
-    public ResponseEntity<String> updateCourse(@PathVariable Long courseId, @Valid @RequestBody CourseRequest courseRequest) {
+    public ResponseEntity<String> updateCourse(@PathVariable @Min(1) Long courseId, @Valid @RequestBody CourseRequest courseRequest) {
         return new ResponseEntity<>(courseService.updateCourse(courseId, courseRequest), HttpStatus.OK);
     }
 
     @Operation(summary = "Delete Existing Course")
     @DeleteMapping("/delete/{courseId}")
-    public ResponseEntity<String> deleteCourse(@PathVariable Long courseId) {
+    public ResponseEntity<String> deleteCourse(@PathVariable @Min(1) Long courseId) {
         return new ResponseEntity<>(courseService.deleteCourse(courseId), HttpStatus.OK);
     }
 

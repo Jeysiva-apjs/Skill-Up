@@ -5,16 +5,18 @@ import com.jey.skillup.service.AdminService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Min;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Tag(name = "Admin - Management API Endpoints")
-@RestController
+@Validated
 @RequestMapping("/admin")
-@AllArgsConstructor
+@RequiredArgsConstructor
+@RestController
 public class AdminController {
 
     private final AdminService adminService;
